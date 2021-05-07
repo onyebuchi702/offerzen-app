@@ -84,3 +84,11 @@
     transform: rotate(45deg);
   }
 }
+
+@media (max-width: 600px) {
+  .index__container {
+    .index__search {
+      width: 50%;
+    }
+  }
+}

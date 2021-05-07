@@ -21,9 +21,9 @@
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    border: 1px solid none;
-    border-radius: 2px;
-    box-shadow: 1px 1px 5px 5px #00000029;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 1px 1px 9px 10px transparent;
   }
 
   th, td {
@@ -71,6 +71,8 @@
 
 @media (max-width: 600px) {
   .candidates__container {
+    height: 100%;
+
     .candidates__tableImg {
       width: 55%;
     }
