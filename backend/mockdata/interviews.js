@@ -11,7 +11,7 @@ const interviews = [
       },
       "sent_by": "Ethan Marrs",
       "status": "Interviewing",
-      "archived": false
+      "archived": true
   },
   {
       "image": "https://www.filepicker.io/api/file/a46tKdb2RTS0hUbOeGjw/convert?fit=crop&h=200&w=200",

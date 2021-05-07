@@ -22,6 +22,6 @@ export const tableTitle = [
   },
   {
     id: 6,
-    title: "Archive"
+    title: ""
   }
 ]

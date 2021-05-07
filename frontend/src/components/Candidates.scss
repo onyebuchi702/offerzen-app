@@ -1,4 +1,5 @@
 .candidates__container {
+  height: 100vh;
   background-color: var(--mainMystic);
 
   .candidates__section {
@@ -30,7 +31,6 @@
     color: var(--mainJumbo);
     font-weight: normal;
     padding: 8px;
-    background-color: var(--mainAthensGray);
     border-bottom: 1px solid var(--mainCatskillWhite);
   }
 
@@ -38,6 +38,31 @@
     width: 8%;
     margin-right: 1em;
     border-radius: 50%;
+  }
+
+  .candidates__tableArchive {
+    color: var(--mainScooter);
+    text-transform: capitalize;
+    font-weight: normal;
+  }
+
+  .candidates__tableRowArchived {
+    background-color: var(--mainCatskillWhite);
+  }
+
+  .candidates__tableRow {
+    background-color: var(--mainAthensGray);
+  }
+
+  .candidates__tableDate {
+    font-size: 13px;
+    color: var(--mainGrayChateau);
+  }
+
+  .candidates__requests {
+    color: var(--mainJumbo);
+    float: right;
+    font-weight: bold;
   }
 
   // tr:nth-child(even){background-color: #f2f2f2}
