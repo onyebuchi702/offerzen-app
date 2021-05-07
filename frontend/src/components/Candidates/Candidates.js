@@ -1,21 +1,22 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import moment from "moment"
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchAllCandidates } from '../redux/actions/interview'
-import { tableTitle } from '../constants/tableTitle'
+import * as _ from "lodash"
+import { tableTitle } from '../../constants/tableTitle'
 import './Candidates.scss'
 
-const Candidates = () => {
-  const { data, loading, error } = useSelector(state => state.getAllInterviews)
+const Candidates = ({ data, showArchives }) => {
 
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(fetchAllCandidates())
-  }, [])
-
-  if(loading && loading) return <h3>Loading...</h3>
-  if(error && error) return <h3>Error: Sorry could not get the interview list</h3>
+  const arr = [...tableTitle]
+  const checkTitles = () => {
+    if(!showArchives) {
+      _.remove(arr, function(e) {
+          return e.title === ""
+      });
+      return arr
+    } else {
+      return tableTitle
+    }
+  }
 
   return (
     <div className="candidates__container">
@@ -25,7 +26,7 @@ const Candidates = () => {
           <table>
             <tr>
               {
-                tableTitle.map(titles => {
+                checkTitles().map(titles => {
                   const { title } = titles
                   return (
                     <th
@@ -72,7 +73,12 @@ const Candidates = () => {
                     </td>
                     <td>R{salary}</td>
                     <td>{sent_by}</td>
-                    <td className="candidates__tableArchive">{archived ? "archive" : "unarchive"}</td>
+                    {
+                      showArchives &&
+                        <td className="candidates__tableArchive">
+                          {archived ? "archive" : "unarchive"}
+                        </td>
+                    }
                   </tr>
                 )
               })

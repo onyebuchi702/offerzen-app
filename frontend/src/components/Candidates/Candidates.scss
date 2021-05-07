@@ -3,7 +3,7 @@
   background-color: var(--mainMystic);
 
   .candidates__section {
-    padding: 2.5em;
+    padding: 1em 3em;
   }
 
   .candidates__tableSection {
@@ -63,6 +63,7 @@
     color: var(--mainJumbo);
     float: right;
     font-weight: bold;
+    margin-bottom: .5em;
   }
 
   // tr:nth-child(even){background-color: #f2f2f2}

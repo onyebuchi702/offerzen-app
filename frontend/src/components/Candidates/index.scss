@@ -1,0 +1,86 @@
+.index__container {
+  .index__top {
+    padding: .5em 3em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .index__search {
+    padding: .5em 1em;
+    width: 12%;
+    border-radius: 5px;
+    border: 1px solid var(--mainCatskillWhite);
+  }
+
+  .index__archive {
+    .index__showText {
+      font-size: 15px;
+      font-weight: semiBold;
+      color: var(--mainJumbo);
+      margin-right: 1em;
+      vertical-align: -webkit-baseline-middle;
+    }
+  }
+
+  .index__container {
+    // display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .index__container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 1px solid var(--mainScooter);
+    border-radius: 3px;
+    background-color: var(--mainWhiteIce);
+  }
+
+  .index__container:hover input ~ .checkmark {
+    background-color: var(--mainWhiteIce);
+  }
+
+  .index__container input:checked ~ .checkmark {
+    background-color: var(--mainWhiteIce);
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .index__container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .index__container .checkmark:after {
+    left: 7px;
+    top: 2px;
+    width: 8px;
+    height: 15px;
+    border: solid var(--mainScooter);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
