@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchAllCandidates } from '../redux/actions/interview'
 import { tableTitle } from '../constants/tableTitle'
 import './Candidates.scss'
 
 const Candidates = () => {
+  const { data, loading, error } = useSelector(state => state.getAllInterviews)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchAllCandidates())
+  }, [])
+
   return (
     <div className="candidates__container">
       <div className="candidates__section">
@@ -13,7 +23,11 @@ const Candidates = () => {
                 tableTitle.map(titles => {
                   const { title } = titles
                   return (
-                    <th className="candidates__tableTitle">{title}</th>
+                    <th
+                      key={titles.id}
+                      className="candidates__tableTitle">
+                      {title}
+                    </th>
                   )
                 })
               }

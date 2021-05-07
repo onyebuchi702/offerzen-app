@@ -3,13 +3,25 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require("cors")
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var interviewsRouter = require('./routes/interviews');
 
 var app = express();
 
 const PORT = 4001
+
+//Allow cross-origin
+app.use(
+  cors({
+    allowedHeaders: ["sessionId", "Content-Type"],
+    exposedHeaders: ["sessionId"],
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+  })
+)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,7 +34,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/interviews', interviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,5 +51,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.listen(PORT, () =>
+  console.log(`gatsby redux app is listening on port ${PORT}!`)
+)
 
 module.exports = app;
