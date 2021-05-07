@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import moment from "moment"
 import * as _ from "lodash"
 import { tableTitle } from '../../constants/tableTitle'
@@ -40,7 +39,6 @@ const Candidates = ({ data, showArchives }) => {
             </tr>
             {
               data?.map((data, index) => {
-
                 const {
                   image,
                   candidate,
@@ -56,7 +54,9 @@ const Candidates = ({ data, showArchives }) => {
                 } = data
 
                 return (
-                  <tr key={index} className={!archived ? "candidates__tableRowArchived" : "candidates__tableRow"}>
+                  <tr
+                    key={index}
+                    className={!archived ? "candidates__tableRowArchived" : "candidates__tableRow"}>
                     <td>
                       <img
                         src={image}
