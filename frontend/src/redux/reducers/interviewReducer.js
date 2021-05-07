@@ -13,7 +13,7 @@ function getAllInterviewsReducer(state = {}, action) {
     case FETCH_INTERVIEW_CANDIDATES_SUCCESS:
       return {
         isLoading: false,
-        data: action.payload,
+        data: action.payload.data,
       }
     case FETCH_INTERVIEW_CANDIDATES_ERROR:
       return {

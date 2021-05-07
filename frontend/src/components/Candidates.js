@@ -13,6 +13,9 @@ const Candidates = () => {
     dispatch(fetchAllCandidates())
   }, [])
 
+  if(loading && loading) return <h3>Loading...</h3>
+  if(error && error) return <h3>Error: Sorry could not get the interview list</h3>
+
   return (
     <div className="candidates__container">
       <div className="candidates__section">
@@ -32,30 +35,43 @@ const Candidates = () => {
                 })
               }
             </tr>
-            <tr>
-              <td>Jill</td>
-              <td>Smith</td>
-              <td>50</td>
-              <td>50</td>
-              <td>50</td>
-              <td>50</td>
-            </tr>
-            <tr>
-              <td>Eve</td>
-              <td>Jackson</td>
-              <td>94</td>
-              <td>94</td>
-              <td>94</td>
-              <td>94</td>
-            </tr>
-            <tr>
-              <td>Adam</td>
-              <td>Johnson</td>
-              <td>67</td>
-              <td>67</td>
-              <td>67</td>
-              <td>67</td>
-            </tr>
+            {
+              data?.map((data, index) => {
+
+                const {
+                  image,
+                  candidate,
+                  role,
+                  salary,
+                  last_comms: {
+                    unread,
+                    date_time,
+                    description
+                  },
+                  sent_by,
+                  status,
+                  archived
+                } = data
+
+                return (
+                  <tr key={index}>
+                    <td>
+                      <img
+                        src={image}
+                        alt="profile pic"
+                        className="candidates__tableImg"
+                      />
+                      {candidate}
+                    </td>
+                    <td>{role ? role : "-"}</td>
+                    <td>{unread}{date_time}{description}</td>
+                    <td>R{salary}</td>
+                    <td>{sent_by}</td>
+                    <td>{archived ? "archive" : "unarchive"}</td>
+                  </tr>
+                )
+              })
+            }
           </table>
         </div>
       </div>

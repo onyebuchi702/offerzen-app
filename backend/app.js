@@ -53,7 +53,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(PORT, () =>
-  console.log(`gatsby redux app is listening on port ${PORT}!`)
+  console.log(`offerzen app is listening on port ${PORT}!`)
 )
 
 module.exports = app;
