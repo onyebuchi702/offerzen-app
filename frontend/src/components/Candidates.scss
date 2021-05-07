@@ -1,0 +1,38 @@
+.candidates__container {
+  background-color: var(--mainMystic);
+
+  .candidates__section {
+    padding: 2.5em;
+  }
+
+  .candidates__tableSection {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .candidates__tableTitle {
+    background-color: var(--mainCatskillWhite);
+    color: var(--mainOxfordBlue);
+    font-weight: bold;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid none;
+    border-radius: 2px;
+    box-shadow: 1px 1px 5px 5px #00000029;
+  }
+
+  th, td {
+    text-align: left;
+    color: var(--mainJumbo);
+    font-weight: normal;
+    padding: 8px;
+    background-color: var(--mainAthensGray);
+    border-bottom: 1px solid var(--mainCatskillWhite);
+  }
+
+  // tr:nth-child(even){background-color: #f2f2f2}
+}

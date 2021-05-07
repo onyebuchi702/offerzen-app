@@ -1,0 +1,16 @@
+:root {
+  --mainOxfordBlue: #343951;
+  --mainScooter: #40aadb;
+  --mainJungleGreen: #34B96F;
+  --mainMandy: #E25C59;
+  --mainWhiteIce: #D9EEF8;
+  --mainJumbo: #7C7C80;
+  --mainGrayChateau: #A6ACAF;
+  --mainMystic: #E4EBEF;
+  --mainCatskillWhite: #EEF3F6;
+  --mainAthensGray: #F9FAFB;
+}
+
+* {
+  font-family: ProximaNova;
+}
