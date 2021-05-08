@@ -26,12 +26,15 @@ const Candidates = ({ data, showArchives }) => {
             <tr>
               {
                 checkTitles().map(titles => {
-                  const { title } = titles
+                  const { title, id, icon } = titles
                   return (
                     <th
-                      key={titles.id}
+                      key={id}
                       className="candidates__tableTitle">
                       {title}
+                      {
+                        icon && <img src={icon} alt="icons" className="candidates__icons"/>
+                      }
                     </th>
                   )
                 })
@@ -56,6 +59,7 @@ const Candidates = ({ data, showArchives }) => {
                 return (
                   <tr
                     key={index}
+                    style={{ fontWeight: unread && "bolder" }}
                     className={!archived ? "candidates__tableRowArchived" : "candidates__tableRow"}>
                     <td>
                       <img
@@ -67,6 +71,9 @@ const Candidates = ({ data, showArchives }) => {
                     </td>
                     <td>{role ? role : "-"}</td>
                     <td>
+                      {unread &&
+                        <span className="candidates__tableUnread"></span>
+                      }{" "}
                       <span>{description}</span>{" "}
                       <span className="">{unread}</span>{" "}
                       <span className="candidates__tableDate">{moment(date_time, "YYYYMMDD").fromNow()}</span>

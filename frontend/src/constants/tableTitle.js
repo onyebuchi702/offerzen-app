@@ -1,3 +1,5 @@
+import Arrow from '../assets/images/arrow-icon.svg'
+
 export const tableTitle = [
   {
     id: 1,
@@ -10,7 +12,7 @@ export const tableTitle = [
   {
     id: 3,
     title: "Last Communication",
-    icon: true
+    icon: Arrow
   },
   {
     id: 4,

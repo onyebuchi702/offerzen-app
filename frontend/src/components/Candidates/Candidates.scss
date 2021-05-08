@@ -66,6 +66,19 @@
     margin-bottom: .5em;
   }
 
+  .candidates__icons {
+    height: 1.2em;
+    object-fit: contain;
+  }
+
+  .candidates__tableUnread {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: var(--mainMandy);
+  }
+
   // tr:nth-child(even){background-color: #f2f2f2}
 }
 
