@@ -75,8 +75,9 @@ const Candidates = ({ data, showArchives }) => {
                         <span className="candidates__tableUnread"></span>
                       }{" "}
                       <span>{description}</span>{" "}
-                      <span className="">{unread}</span>{" "}
-                      <span className="candidates__tableDate">{moment(date_time, "YYYYMMDD").fromNow()}</span>
+                      <span className="candidates__tableDate">
+                        {moment(date_time, "YYYYMMDD").fromNow()}
+                      </span>
                     </td>
                     <td>R{salary}</td>
                     <td>{sent_by}</td>
