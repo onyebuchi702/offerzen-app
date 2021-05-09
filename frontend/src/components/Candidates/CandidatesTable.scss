@@ -1,17 +1,17 @@
-.candidates__container {
+.candidatesTable__container {
   height: 100vh;
   background-color: var(--mainMystic);
 
-  .candidates__section {
+  .candidatesTable__section {
     padding: 1em 3em;
   }
 
-  .candidates__tableSection {
+  .candidatesTable__tableSection {
     overflow-x: auto;
     width: 100%;
   }
 
-  .candidates__tableTitle {
+  .candidatesTable__tableTitle {
     background-color: var(--mainCatskillWhite);
     color: var(--mainOxfordBlue);
     font-weight: bold;
@@ -34,44 +34,44 @@
     border-bottom: 1px solid var(--mainCatskillWhite);
   }
 
-  .candidates__tableImg {
+  .candidatesTable__tableImg {
     width: 8%;
     margin-right: 1em;
     border-radius: 50%;
   }
 
-  .candidates__tableArchive {
+  .candidatesTable__tableArchive {
     color: var(--mainScooter);
     text-transform: capitalize;
     font-weight: normal;
   }
 
-  .candidates__tableRowArchived {
+  .candidatesTable__tableRowArchived {
     background-color: var(--mainCatskillWhite);
   }
 
-  .candidates__tableRow {
+  .candidatesTable__tableRow {
     background-color: var(--mainAthensGray);
   }
 
-  .candidates__tableDate {
+  .candidatesTable__tableDate {
     font-size: 13px;
     color: var(--mainGrayChateau);
   }
 
-  .candidates__requests {
+  .candidatesTable__requests {
     color: var(--mainJumbo);
     float: right;
     font-weight: bold;
     margin-bottom: .5em;
   }
 
-  .candidates__icons {
+  .candidatesTable__icons {
     height: 1.2em;
     object-fit: contain;
   }
 
-  .candidates__tableUnread {
+  .candidatesTable__tableUnread {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -83,10 +83,10 @@
 }
 
 @media (max-width: 600px) {
-  .candidates__container {
+  .candidatesTable__container {
     height: 100%;
 
-    .candidates__tableImg {
+    .candidatesTable__tableImg {
       width: 55%;
     }
   }

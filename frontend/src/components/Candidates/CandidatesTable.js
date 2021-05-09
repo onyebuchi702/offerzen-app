@@ -1,9 +1,9 @@
 import moment from "moment"
 import * as _ from "lodash"
 import { tableTitle } from '../../constants/tableTitle'
-import './Candidates.scss'
+import './CandidatesTable.scss'
 
-const Candidates = ({ data, showArchives }) => {
+const CandidatesTable = ({ data = [], showArchives }) => {
 
   const arr = [...tableTitle]
   const checkTitles = () => {
@@ -18,10 +18,10 @@ const Candidates = ({ data, showArchives }) => {
   }
 
   return (
-    <div className="candidates__container">
-      <div className="candidates__section">
-        <p className="candidates__requests">{data?.length} interview requests</p>
-        <div className="candidates__tableSection">
+    <div className="candidatesTable__container">
+      <div className="candidatesTable__section">
+        <p className="candidatesTable__requests">{data.length} interview requests</p>
+        <div className="candidatesTable__tableSection">
           <table>
             <tr>
               {
@@ -30,10 +30,10 @@ const Candidates = ({ data, showArchives }) => {
                   return (
                     <th
                       key={id}
-                      className="candidates__tableTitle">
+                      className="candidatesTable__tableTitle">
                       {title}
                       {
-                        icon && <img src={icon} alt="icons" className="candidates__icons"/>
+                        icon && <img src={icon} alt="icons" className="candidatesTable__icons"/>
                       }
                     </th>
                   )
@@ -41,7 +41,7 @@ const Candidates = ({ data, showArchives }) => {
               }
             </tr>
             {
-              data?.map((data, index) => {
+              data.map((data, index) => {
                 const {
                   image,
                   candidate,
@@ -60,22 +60,22 @@ const Candidates = ({ data, showArchives }) => {
                   <tr
                     key={index}
                     style={{ fontWeight: unread && "bolder" }}
-                    className={!archived ? "candidates__tableRowArchived" : "candidates__tableRow"}>
+                    className={!archived ? "candidatesTable__tableRowArchived" : "candidatesTable__tableRow"}>
                     <td>
                       <img
                         src={image}
                         alt="profile pic"
-                        className="candidates__tableImg"
+                        className="candidatesTable__tableImg"
                       />
                       {candidate}
                     </td>
                     <td>{role ? role : "-"}</td>
                     <td>
                       {unread &&
-                        <span className="candidates__tableUnread"></span>
+                        <span className="candidatesTable__tableUnread"></span>
                       }{" "}
                       <span>{description}</span>{" "}
-                      <span className="candidates__tableDate">
+                      <span className="candidatesTable__tableDate">
                         {moment(date_time, "YYYYMMDD").fromNow()}
                       </span>
                     </td>
@@ -83,7 +83,7 @@ const Candidates = ({ data, showArchives }) => {
                     <td>{sent_by}</td>
                     {
                       showArchives &&
-                        <td className="candidates__tableArchive">
+                        <td className="candidatesTable__tableArchive">
                           {archived ? "archive" : "unarchive"}
                         </td>
                     }
@@ -98,4 +98,4 @@ const Candidates = ({ data, showArchives }) => {
   )
 }
 
-export default Candidates
+export default CandidatesTable

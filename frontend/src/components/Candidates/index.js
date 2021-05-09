@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAllCandidates } from '../../redux/actions/interview'
-import Candidates from "./Candidates"
+import CandidatesTable from "./CandidatesTable"
 import './index.scss'
 
-const Index = () => {
+const Candidates= () => {
   const [q, setQ] = useState('')
   const [searchColumns] = useState(["candidate"])
   const [toggleArchive, setToggleArchive] = useState(true)
@@ -28,18 +28,18 @@ const Index = () => {
   }
 
   return (
-    <div className="index__container">
-      <div className="index__top">
+    <div className="candidates__container">
+      <div className="candidates__top">
         <input
           type="text"
           placeholder="Search"
           value={q}
           onChange={e => setQ(e.target.value)}
-          className="index__search"
+          className="candidates__search"
         />
-        <div className="index__archive">
-          <span className="index__showText">Show archives</span>
-          <label className="index__container">
+        <div className="candidates__archive">
+          <span className="candidates__showText">Show archives</span>
+          <label className="candidates__container">
             <input
               type="checkbox"
               checked={toggleArchive}
@@ -48,9 +48,9 @@ const Index = () => {
           </label>
         </div>
       </div>
-      <Candidates data={search(data)} showArchives={toggleArchive}/>
+      <CandidatesTable data={search(data)} showArchives={toggleArchive}/>
     </div>
   )
 }
 
-export default Index
+export default Candidates

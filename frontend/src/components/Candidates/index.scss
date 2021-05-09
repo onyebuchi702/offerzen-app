@@ -1,11 +1,11 @@
-.index__container {
-  .index__top {
+.candidates__container {
+  .candidates__top {
     padding: .5em 3em;
     display: flex;
     justify-content: space-between;
   }
 
-  .index__search {
+  .candidates__search {
     padding: .5em 1em;
     width: 12%;
     border-radius: 5px;
@@ -14,8 +14,8 @@
     background-size: 25px 25px;
   }
 
-  .index__archive {
-    .index__showText {
+  .candidates__archive {
+    .candidates__showText {
       font-size: 15px;
       font-weight: semiBold;
       color: var(--mainJumbo);
@@ -24,7 +24,7 @@
     }
   }
 
-  .index__container {
+  .candidates__container {
     // display: block;
     position: relative;
     padding-left: 35px;
@@ -37,7 +37,7 @@
     user-select: none;
   }
 
-  .index__container input {
+  .candidates__container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -56,11 +56,11 @@
     background-color: var(--mainWhiteIce);
   }
 
-  .index__container:hover input ~ .checkmark {
+  .candidates__container:hover input ~ .checkmark {
     background-color: var(--mainWhiteIce);
   }
 
-  .index__container input:checked ~ .checkmark {
+  .candidates__container input:checked ~ .checkmark {
     background-color: var(--mainWhiteIce);
   }
 
@@ -70,11 +70,11 @@
     display: none;
   }
 
-  .index__container input:checked ~ .checkmark:after {
+  .candidates__container input:checked ~ .checkmark:after {
     display: block;
   }
 
-  .index__container .checkmark:after {
+  .candidates__container .checkmark:after {
     left: 7px;
     top: 2px;
     width: 8px;
@@ -88,8 +88,8 @@
 }
 
 @media (max-width: 600px) {
-  .index__container {
-    .index__search {
+  .candidates__container {
+    .candidates__search {
       width: 50%;
     }
   }
