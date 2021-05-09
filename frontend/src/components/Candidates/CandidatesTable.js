@@ -59,7 +59,7 @@ const CandidatesTable = ({ data = [], showArchives }) => {
                 return (
                   <tr
                     key={index}
-                    style={{ fontWeight: unread && "bolder" }}
+                    style={unread ? { fontWeight: "bolder" } : {}}
                     className={!archived ? "candidatesTable__tableRowArchived" : "candidatesTable__tableRow"}>
                     <td>
                       <img
